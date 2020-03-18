@@ -23,7 +23,7 @@ const App = props => {
   return (
     <>
       <p>
-        現在の{name}は,{price}です{renderPeriod()}
+        現在の{name}は,{price}です
       </p>
       {/* ()...state) スプレッド構文 */}
       {/* 一度stateを展開(...state)することでpriceのみ変更することができる */}
