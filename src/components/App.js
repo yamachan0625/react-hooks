@@ -7,8 +7,6 @@ import Events from './Events';
 import AppContext from '../contexts/AppContext';
 import reducer from '../reducers';
 
-console.log({ AppContext });
-
 const App = () => {
   //dispatchでフォームの内容とtypeをreducerに渡す
   //reducer側でactionのtypeに応じて処理をし新しいstateを返す
@@ -19,10 +17,10 @@ const App = () => {
     //<AppContext.Provider value={'Hello,I am a Provider'}>
     //のように作成したcontextのproviderでDOMを挟み、valueに渡したい
     //値を持たせることで挟まれているcomponentで受け取ることができる
-    <AppContext.Provider value={'Hello,I am a Provider'}>
+    <AppContext.Provider value={{ state, dispatch }}>
       <div className="container-fluid">
-        <EventForm state={state} dispatch={dispatch} />
-        <Events state={state} dispatch={dispatch} />
+        <EventForm />
+        <Events />
       </div>
     </AppContext.Provider>
   );
