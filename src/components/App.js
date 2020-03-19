@@ -8,10 +8,11 @@ import AppContext from '../contexts/AppContext';
 import reducer from '../reducers';
 
 const App = () => {
+  const initialState = { events: [] };
   //dispatchでフォームの内容とtypeをreducerに渡す
   //reducer側でactionのtypeに応じて処理をし新しいstateを返す
   //useReducer(reducer, [])で取得し、[state,dispatch]第一引数stateで新しいstateを受け取る
-  const [state, dispatch] = useReducer(reducer, []);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     //<AppContext.Provider value={'Hello,I am a Provider'}>
